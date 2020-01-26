@@ -12,6 +12,49 @@ category:            {{category}}{{^category}}Web{{/category}}
 extra-source-files:
 - README.md
 
+default-extensions:
+  - Arrows
+  - BangPatterns
+  - BinaryLiterals
+  - ConstraintKinds
+  - DataKinds
+  - DeriveDataTypable
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveTraversable
+  - DerivingStrategies
+  - DerivingVia
+  - EmptyCase
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - HexFloatLiterals
+  - KindSignatures
+  - LambdaCase
+  - MultiParamTypeClasses
+  - MultiwayIf
+  - NegativeLiterals
+  - NumDecimals
+  - NumericUnderscores
+  - PartialTypeSignatures
+  - PatternSynonyms
+  - QuantifiedConstraints
+  - RankNTypes
+  - RecordWildCards
+  - RecursiveDo
+  - ScopedTypeVariables
+  - StrictData
+  - TupleSections
+  - TypeFamiles
+  - TypeFamilyDependencies
+  - TypeOperators
+  - UnicodeSyntax
+  - ViewPatterns
+
 dependencies:
   - base >= 4.7 && < 5
 
