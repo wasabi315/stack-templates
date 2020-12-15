@@ -12,13 +12,36 @@ category:            {{category}}{{^category}}Web{{/category}}
 extra-source-files:
 - README.md
 
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
+
 dependencies:
   - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
 
 executables:
   {{name}}:
     source-dirs:      app
     main:             Main.hs
+    dependencies:
+      - {{name}}
+
+tests:
+  {{name}}-test:
+    source-dirs:      test
+    main:             Tasty.hs
+    dependencies:
+      - {{name}}
+      - tasty
+      - tasty-discover
 
 {-# START_FILE Setup.hs #-}
 import Distribution.Simple
@@ -29,7 +52,10 @@ main = defaultMain
 module Main where
 
 main :: IO ()
-main = pure ()
+main = putStrLn "Hello, world!"
+
+{-# START_FILE test/Tasty.hs #-}
+{-# OPTIONS_GHC -F -pgmF tasty-discover #-}
 
 {-# START_FILE README.md #-}
 # {{name}}
